@@ -1,0 +1,47 @@
+# 版本控制
+.git
+.gitignore
+
+# Python 快取
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# 虛擬環境
+venv/
+.venv/
+env/
+ENV/
+
+# 環境變數（不可打包進 image！）
+.env
+.env.local
+.env.production
+
+# IDE / 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 測試 / 覆蓋率
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+
+# 建置產物
+dist/
+build/
+*.egg-info/
+
+# 日誌
+*.log
+
+# 其他
+README.md
+DOCKER_README.md
+Procfile
