@@ -66,6 +66,17 @@ docker compose up --build
 
 `.env` 已列入 `.gitignore`；請參考 `.env.example`。
 
+## 測試
+
+以 pytest + **mongomock_motor** 撰寫整合測試（模擬 MongoDB，免真實資料庫即可執行）：
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+pytest -q          # 8 個測試
+```
+
+覆蓋：註冊／重複 email／email 格式驗證、登入成功與失敗、`/me` 受保護端點需登入、JWT 驗證。
+
 ---
 
 ## 面試可能會被問
@@ -80,5 +91,5 @@ docker compose up --build
 它每次雜湊都加隨機 salt，相同密碼也會得到不同雜湊，讓彩虹表失效；而且刻意慢，增加暴力破解成本。
 
 ## 已知可改進
-- 尚未加 pytest 測試。
+- 已有 pytest 整合測試（8 個，mongomock）；可再補 token 過期等邊界案例。
 - token 過期時間（目前 7 天）可縮短並搭配 refresh token。
